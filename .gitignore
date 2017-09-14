@@ -83,3 +83,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+#JavaScript files
+*.js
