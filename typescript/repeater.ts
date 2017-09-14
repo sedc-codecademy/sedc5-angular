@@ -2,8 +2,12 @@
 // e.g. repeat("Weko", 3) should return "WekoWekoWeko"
 
 let repeat = function (text: string, count: number) {
-    let result = "";
-    for (let index = 0; index < count; index++)
-        result += text;
-    return result;
+    // let result = "";
+    // for (let index = 0; index < count; index++)
+    //     result += text;
+    // return result;
+
+    text.repeat(count);
 }
+
+console.log(repeat("Weko", 3));
