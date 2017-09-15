@@ -1,4 +1,4 @@
-let calc = function (first, second, op) {
+let calc = function (first:number, second: number, op: string) {
     switch (op) {
         case "+":
             return first + second;
@@ -15,4 +15,4 @@ let calc = function (first, second, op) {
 
 console.log(calc(2, 3, "+"));
 
-console.log(calc("Wekoslav", [{}, {}], false));
+console.log(calc(0x28, 12, "false"));
