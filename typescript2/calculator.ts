@@ -1,4 +1,13 @@
-let calc = function (first:number, second: number, op: string) {
+type operator = "+" | "-" | "*" | "/";
+
+enum Operator {
+    Plus,
+    Minus,
+    Times,
+    Divide
+}
+
+let calc = function (first:number, second: number, op: operator) {
     switch (op) {
         case "+":
             return first + second;
@@ -8,11 +17,9 @@ let calc = function (first:number, second: number, op: string) {
             return first * second;
         case "/":
             return Math.floor(first / second);
-        default:
-            return "error";
     }
 }
 
 console.log(calc(2, 3, "+"));
 
-console.log(calc(0x28, 12, "false"));
+console.log(calc(0x28, 12, "+"));
