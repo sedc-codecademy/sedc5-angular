@@ -15,3 +15,5 @@ export var counter = 0;
 export default function square(n: number) {
   return n * n;
 }
+
+console.log("I'm a sideeffect");

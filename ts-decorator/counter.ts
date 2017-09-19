@@ -44,7 +44,7 @@ export function countProperty(countGets = true, countSets = true) {
         };
         var setter = function (newValue) {
             if (countSets) {
-                console.log(`Setting ${fullPropName} value of ${newValue}`);
+                console.log(`Setting ${fullPropName} value to ${newValue}`);
                 if (!counter.properties[fullPropName])
                     counter.properties[fullPropName] = { get: 0, set: 0 };
                 counter.properties[fullPropName].set++;
