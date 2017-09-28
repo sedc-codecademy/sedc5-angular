@@ -6,10 +6,27 @@
   <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 
+<button (click)="incOneFirst()">Increase oneFirst</button>
+<button (click)="incOneSecond()">Increase oneSecond</button>
+
 <h1 style="padding-left: 50px">
   <app-calculator [first]="oneFirst" [second]="oneSecond" [operation]="oneOp"></app-calculator>
   <app-calculator [first]="twoFirst" [second]="twoSecond" [operation]="twoOp"></app-calculator>
   <app-calculator [first]="threeFirst" [second]="threeSecond" [operation]="threeOp"></app-calculator>
+</h1>
+
+<button (click)="addName()">Add Name</button>
+<ng-container *ngIf="false">
+<h1 *ngFor="let name of names"  style="padding-left: 50px">
+  {{ name }}
+</h1>
+</ng-container>
+
+<button (click)="removeCalc()">Remove Calc</button>
+<h1 style="padding-left: 50px">
+  <app-calculator *ngFor="let calc of calcs" [first]="calc.first" [second]="calc.second" [operation]="calc.op">
+
+  </app-calculator>
 </h1>
 
 
