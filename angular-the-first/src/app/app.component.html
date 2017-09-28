@@ -29,6 +29,17 @@
   </app-calculator>
 </h1>
 
+<button (click)="toggleRed()">Toggle Red</button>
+<button (click)="toggleGreen()">Toggle Green</button>
+
+<h1 style="padding-left: 50px" [ngClass]="getClassValues()">
+  <app-person 
+    [firstName]="weko.firstName"
+    [lastName] = "weko.lastName"
+    [birthDate] = "weko.birthDate"
+  ></app-person>
+</h1>    
+
 
 <h2>Here are some links to help you start: </h2>
 <ul>
