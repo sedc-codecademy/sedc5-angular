@@ -32,7 +32,6 @@ export const routes: Routes = [
     {
         path: "multiply/:first/:second",
         component: MultiplierComponent
-
     },
     {
         path: "times/:first/:second",
