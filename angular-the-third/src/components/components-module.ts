@@ -3,6 +3,9 @@ import { CommonModule } from "@angular/common";
 
 import { AdderComponent } from "./adder";
 import { SubtracterComponent } from "./subtracter";
+import { MultiplierComponent } from "./multiplier";
+import { InvalidOperationComponent } from "./invalid-operation";
+import { WelcomeComponent } from "./welcome";
 
 @NgModule({
     imports: [
@@ -10,11 +13,17 @@ import { SubtracterComponent } from "./subtracter";
     ],
     declarations: [
         AdderComponent,
-        SubtracterComponent
+        SubtracterComponent,
+        MultiplierComponent,
+        InvalidOperationComponent,
+        WelcomeComponent
     ],
     exports: [
         AdderComponent,
-        SubtracterComponent
+        SubtracterComponent,
+        MultiplierComponent,
+        InvalidOperationComponent,
+        WelcomeComponent
     ]
 })
 export class ComponentsModule { }
