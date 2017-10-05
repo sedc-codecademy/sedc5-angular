@@ -1,18 +1,45 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <h1 [ngClass]="getClasses()">
     Welcome to {{title}}!
   </h1>
   <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 
 <h1 style="padding-left: 50px">
+    <app-show-name [firstName]="weko.firstName" [lastName]="weko.lastName" [birthDate]="weko.birthDate"></app-show-name>
+</h1>
+
+<h1 style="padding-left: 50px">
+  <button (click)="incFirst()" style="font-size: 30px">Increase First</button>
+  <button (click)="incSecond()" style="font-size: 30px">Increase Second</button>
+  
+  <button (click)="toggleRed()" style="font-size: 30px">Toggle Red</button>
+  <button (click)="toggleGreen()" style="font-size: 30px">Toggle Green</button>
+  
+  
   <app-calculator [first]="oneFirst" [second]="oneSecond" [operation]="oneOp"></app-calculator>
   <app-calculator [first]="twoFirst" [second]="twoSecond" [operation]="twoOp"></app-calculator>
   <app-calculator [first]="threeFirst" [second]="threeSecond" [operation]="threeOp"></app-calculator>
   <app-calculator [first]="fourFirst" [second]="fourSecond" [operation]="fourOp"></app-calculator>
 </h1>
 
+<h1 style="padding-left: 50px">
+  <app-show-name [firstName]="beatles[0].firstName" [lastName]="beatles[0].lastName"></app-show-name>
+  <app-show-name [firstName]="beatles[1].firstName" [lastName]="beatles[1].lastName"></app-show-name>
+  <app-show-name [firstName]="beatles[2].firstName" [lastName]="beatles[2].lastName"></app-show-name>
+  <app-show-name [firstName]="beatles[3].firstName" [lastName]="beatles[3].lastName"></app-show-name>
+</h1>
+
+<h1 style="padding-left: 50px">
+    <ul>
+      <li *ngFor="let beatle of beatles, index as index, last as isLast, odd as isOdd, even as isEven">
+         <span [class.zeleno]="isOdd" [class.crveno]="isEven">{{ beatle.lastName }}</span>
+         <span *ngIf="!isLast">,</span>
+      </li>
+    </ul>
+    <app-show-names [people]="beatles"></app-show-names>
+</h1>
 
 <h2>Here are some links to help you start: </h2>
 <ul>

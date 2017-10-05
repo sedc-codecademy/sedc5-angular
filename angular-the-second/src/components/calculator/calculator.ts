@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from "@angular/core";
 
 @Component({
     selector: "app-calculator",
@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from "@angular/core";
     {{ first }} {{ operation }} {{ second }} = {{ result }}
 </div>`
 })
-export class CalculatorComponent implements OnInit {
+export class CalculatorComponent implements OnInit, OnChanges {
     @Input() first: number;
     @Input() second: number;
     @Input() operation: string;
@@ -14,6 +14,10 @@ export class CalculatorComponent implements OnInit {
     result: number;
 
     ngOnInit() {
+        this.calculate();
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
         this.calculate();
     }
 
