@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,10 @@ export class AppComponent {
   first = 10;
   second = 5;
 
-  constructor(private router: Router) {
-
+  constructor(private router: Router, private route: ActivatedRoute) {
+    // console.log(this.route.snapshot.params);
+    // this.first = Number(this.route.snapshot.params["first"]);
+    // this.second = Number(this.route.snapshot.params["second"]);
   }
 
   getUrl(operation: string) {
