@@ -1,8 +1,16 @@
 import { Routes } from "@angular/router";
 
-import { AdderComponent, SubtracterComponent } from "../components";
+import {
+    AdderComponent,
+    SubtracterComponent,
+    InvalidOperationComponent,
+    WelcomeComponent
+} from "../components";
 
 export const AppRoutes: Routes = [{
+    path: "",
+    component: WelcomeComponent
+}, {
     path: "add/:first/:second",
     component: AdderComponent
 }, {

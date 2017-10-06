@@ -14,6 +14,7 @@ export class SubtracterComponent implements OnInit {
     result: number;
 
     constructor(private route: ActivatedRoute) {
+        console.log("constructed subtracter");
         this.first = Number(this.route.snapshot.params["first"]);
         this.second = Number(this.route.snapshot.params["second"]);
     }

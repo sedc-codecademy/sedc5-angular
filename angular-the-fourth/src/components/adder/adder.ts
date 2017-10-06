@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
     selector: "app-adder",
@@ -13,9 +13,22 @@ export class AdderComponent implements OnInit {
 
     result: number;
 
-    constructor(private route: ActivatedRoute) {
-        this.first = Number(this.route.snapshot.params["first"]);
-        this.second = Number(this.route.snapshot.params["second"]);
+    constructor(private route: ActivatedRoute, private router: Router) {
+        console.log("constructed adder");
+
+        this.route.params.subscribe(params => {
+            console.log("subscription activated");
+            this.first = Number(params["first"]);
+            this.second = Number(params["second"]);
+            this.calculate();
+
+            if (isNaN(this.first) || isNaN(this.second)) {
+                this.router.navigate(["invalid"], {
+                    replaceUrl: false
+                });
+            }
+        });
+
     }
 
     ngOnInit() {
