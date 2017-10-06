@@ -1,3 +1,18 @@
+<input type="number" [(ngModel)]="firstNumber">
+<input type="number" [(ngModel)]="secondNumber">
+<br />
+<a [routerLink]="getRoute('add')">Add</a>
+<button (click)="goto('add')">Add</button>
+<br />
+<a [routerLink]="getRoute('subtract')">Subtract</a>
+<button (click)="goto('subtract')">Subtract</button>
+<br />
+<a [routerLink]="getRoute('multiply')">Multiply</a>
+<button (click)="goto('multiply')">Multiply</button>
+
+
+
+<hr>
 <router-outlet></router-outlet>
 
 <hr>
