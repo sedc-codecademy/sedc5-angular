@@ -1,0 +1,38 @@
+{
+    "authors": [
+        {
+            "id": 1,
+            "name": "Arthur C. Clarke"
+        },
+        {
+            "id": 2,
+            "name": "Robert A. Heinlein"
+        },
+        {
+            "id": 3,
+            "name": "Isaak Asimov"
+        }
+    ],
+    "novels": [
+        {
+            "id": 1,
+            "authorId": 1,
+            "title": "Songs of Distant Earth"
+        },
+        {
+            "id": 2,
+            "authorId": 1,
+            "title": "Space Oddysey"
+        },
+        {
+            "id": 3,
+            "authorId": 2,
+            "title": "Stranger in a strange land"
+        },
+        {
+            "id": 4,
+            "authorId": 2,
+            "title": "The Moon is a harsh mistress"
+        }
+    ]
+}
