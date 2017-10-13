@@ -1,5 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/observable/fromPromise';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: "app-adder",
@@ -7,14 +11,19 @@ import { ActivatedRoute, Router } from "@angular/router";
     {{first}} + {{second}} = {{result}}
 </div>`
 })
-export class AdderComponent implements OnInit {
+export class AdderComponent implements OnInit, OnDestroy {
     @Input() first: number;
     @Input() second: number;
 
     result: number;
 
+    routeSubscription: Subscription;
+
     constructor(private route: ActivatedRoute, private router: Router) {
         console.log("constructed adder");
+
+        const fragmentPromise = this.route.fragment.toPromise();
+        fragmentPromise.then(value => {});
 
         this.route.params.subscribe(params => {
             console.log("subscription activated");
@@ -33,6 +42,12 @@ export class AdderComponent implements OnInit {
 
     ngOnInit() {
         this.calculate();
+    }
+
+    ngOnDestroy() {
+        if (this.routeSubscription) {
+            this.routeSubscription.unsubscribe();
+        }
     }
 
     calculate() {

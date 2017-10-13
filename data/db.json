@@ -33,6 +33,16 @@
             "id": 4,
             "authorId": 2,
             "title": "The Moon is a harsh mistress"
+        },
+        {
+            "id": 5,
+            "authorId": 2,
+            "title": "Space Cadet"
+        },
+        {
+            "id": 6,
+            "authorId": 3,
+            "title": "The Gods Themselves"
         }
     ]
 }
